@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hải Anh Tour</title>
+    <link rel="shortcut icon" type="image/png" href="./airplane.png" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="./CSS/reponsive.css">
+    <link rel="stylesheet" href="./CSS/all.css">
+
+
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="./CSS/owl.carousel.min.css">
+    <link rel="stylesheet" href="./CSS/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./Fonts/fonts/themify-icons/themify-icons.css">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="./CSS/aos.css">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="./CSS/style.css">
+
+</head>
+
+<body>
+    <div id="show-menu-btn-s" class="show-menu-btn js-show-menu">
+        <h3><i class="ti-angle-double-right show-menu-icon "></i></h3>
+    </div>
+
+    <!-- Modal place -->
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 800) {
+                document.getElementById("modal-place-list").style.display = "block";
+            } else {
+                document.getElementById("modal-place-list").style.display = "none";
+            }
+        };
+    </script>
+    <div class="modal-menu js-modal-menu" id="modal-place-list">
+        <div class="modal-menu-place ">
+            <div id="modal-menu-container" class="js-modal-menu-container">
+                <i class="menu-close-icon js-menu-close-icon ti-angle-double-left"></i>
+                <div class="header-menu-place">
+                    <h2 class="text-header">Place</h2>
+                </div>
+                <div class="modal-menu-place-body">
+                    <li><a class="js-subnav-close" href="#"><i class="ti-home tick-icon-menu"
+                                style="padding-right: 10px;"></i>Trang Chủ</a></li>
+                    <li><a class="js-subnav-close" href="#hanoi"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Hà Nội</a></li>
+                    <li><a class="js-subnav-close" href="#hochiminh"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Ho Chi Minh City</a></li>
+                    <li><a class="js-subnav-close" href="#hue"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Huế</a></li>
+                    <li><a class="js-subnav-close" href="#quangbinh"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Quảng Bình</a></li>
+                    <li><a class="js-subnav-close" href="#hoian"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Hội An</a></li>
+                    <li><a class="js-subnav-close" href="#halong"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Vịnh Hạ Long</a></li>
+                    <li><a class="js-subnav-close" href="#sapa"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Sa Pa</a></li>
+                    <li><a class="js-subnav-close" href="#phuquoc"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Phú Quốc</a></li>
+                    <li><a class="js-subnav-close" href="#danang"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Đà Nẳng</a></li>
+                    <li><a class="js-subnav-close" href="#nhatrang"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Nha Trang</a></li>
+                    <li><a class="js-subnav-close" href="#dalat"><i class="ti-hand-point-right tick-icon-menu"
+                                style="padding-right: 10px;"></i>Đà Lạt</a></li>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- .....................JS SHOW MENU............... -->
+    <script>
+        const menuBtn = document.querySelector('.js-show-menu')
+        const modalMenu = document.querySelector('.js-modal-menu')
+        const closeMenus = document.querySelectorAll('.js-subnav-close')
+        const closeIcon = document.querySelector('.js-menu-close-icon')
+        const modalContainerMenu = document.querySelector('.js-modal-menu-container')
+        function showMenu() {
+            modalMenu.classList.add('open')
+        }
+
+        function hideMenu() {
+            modalMenu.classList.remove('open')
+        }
+
+        menuBtn.addEventListener('click', showMenu)
+
+        for (const closeMenu of closeMenus) {
+            closeMenu.addEventListener('click', hideMenu)
+        }
+
+        closeIcon.addEventListener('click', hideMenu)
+        modalMenu.addEventListener('click', hideMenu)
+
+        modalContainerMenu.addEventListener('click', function (event) {
+            event.stopPropagation(modalContainerMenu)
+        }
+        )
+    </script>
+
+
+
+    <!-- ................................ -->
+    <div id="move-up-s" class="move-up">
+        <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+    </div>
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+                document.getElementById("move-up-s").style.display = "block";
+            } else {
+                document.getElementById("move-up-s").style.display = "none";
+            }
+        }
+        document.getElementById('move-up-s').addEventListener("click", function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+
+    <nav class="nav">
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="" class="text-gray"><img src="./logo_haianhbooking_moi.png" alt=""></a>
+            </div>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-items">
+                    <li class="nav-link">
+                        <a href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#travel">Du Lịch</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#contact">Liên Hệ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social text-gray">
+                <a href="https://www.facebook.com/haianhbooking168" target="_blank"><i class="fab fa-facebook-f" style="margin-bottom: 5px;"></i></a>
+                <a href="https://zalo.me/0898640999" target="_blank"><img src="./Asset/7044033_zalo_icon.svg" style="height: 24px; margin-left: 10px;" alt=""></i></a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="site-title">
+            <div class="site-background" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="home-heading" style="font-family: 'Lexend';">Tham quan du lịch và tours giá rẻ</h3>
+                <h1 class="home-heading-sub">Hải Anh Booking</h1>
+            </div>
+        </section>
+        <section>
+            <div class="blog">
+                <div class="container" id="food">
+                    <h1 class="food-text">Món ăn truyền thống</h1>
+                    <div class="owl-carousel owl-theme blog-post">
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img src="./Asset/img/Pho.jpg" class="food-img" alt="post-1">
+                            <div class="blog-title">
+                                <h3>Phở</h3>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-in" data-aos-delay="200">
+                            <img src="./Asset/img/banhchung.jpg" class="food-img" alt="post-1">
+                            <div class="blog-title">
+                                <h3>Bánh Chưng</h3>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
+                            <img src="./Asset/img/banhmi.jpg" class="food-img" alt="post-1">
+                            <div class="blog-title">
+                                <h3>Bánh Mì</h3>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img src="./Asset/img/Banhxeo.jpg" class="food-img" alt="post-1">
+                            <div class="blog-title">
+                                <h3>Bánh Xèo</h3>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img src="./Asset/img/nemcuon.jpg" class="food-img" alt="post-1">
+                            <div class="blog-title">
+                                <h3>Gỏi Cuốn</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-navigation">
+                        <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+                        <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container" id="travel">
+            <div class="site-content">
+                <div class="posts">
+                    <h3 class="travel-text">Địa điểm du lịch nổi tiếng</h3>
+                    <!-- --------------------------------HA NOI---------------------------------- -->
+                    <div id="hanoi">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/Ha Noi.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Hà Nội</strong> - Thủ Đô Việt Nam</p>
+
+                                <p>
+                                    Khi đến Hà Nội, bạn có thể sớm nhận thấy hai trạng thái đối lập luôn cùng tồn tại của thành phố: cổ kính và hiện đại, yên bình và náo nhiệt, truyền thống và đổi mới. Thủ đô của Việt Nam có sự cân bằng kỳ diệu giữa việc duy trì nét duyên dáng ban đầu của lịch sử và văn hóa phong phú và thích ứng với các giá trị đương đại nhất từ ​​​​khắp nơi trên thế giới.
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/HaNoi/index.htm" target="_blank">View Hà Nội</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- --------------------------------HO CHI MINH CITY---------------------------------- -->
+                    <div id="hochiminh">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/HCM.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Thành Phố Hồ Chí Minh</strong> - Thành Phố Không Ngủ</p>
+                                <p>
+                                    Với lưng thành phố quay về một vùng đồng bằng rộng lớn trải dài về phía tây qua Campuchia, và dưới chân là đồng bằng sông Cửu Long trù phú, Thành phố Hồ Chí Minh tọa lạc trên một khúc cua khổng lồ của sông Sài Gòn.
+                                </p>
+                                <button class="btn post-btn"> <a style="font-size: 15px;"
+                                        href="https://vietnam.travel/sites/default/files/360Tour/HoChiMinhCity/index.htm" target="_blank">View Hồ Chí Minh City</a> &nbsp; <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- --------------------------------HUE---------------------------------- -->
+                    <div id="hue">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/Hue.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Huế</strong> - Nơi Thiên Nhiên Chan Hòa</p>
+                                <p>
+                                    Bất chấp tốc độ đô thị hóa nhanh chóng và sự đồng hóa văn hóa đang diễn ra mạnh mẽ ở các khu vực khác của quốc gia Đông Nam Á này, được mô tả rõ nhất là Việt Nam cổ kính, Huế, với tư cách là thủ đô cũ của Việt Nam, tự hào về lịch sử lâu đời, những ngôi chùa khí quyển, vẻ đẹp tráng lệ cung điện hoàng gia và những nét văn hóa độc đáo khó có thể tìm thấy ở nơi nào khác trên đất nước Việt Nam. Bên cạnh những yếu tố kỳ lạ của Kinh Thành, một bức tường bao
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/Hue/index.htm" target="_blank">View Huế</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- --------------------------------QUANG BINH---------------------------------- -->
+                    <div id="quangbinh">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/Quangbinh.png" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Quảng Bình</strong> - Vương quốc hang động</p>
+                                <p>
+                                    Quảng Bình nằm ở vùng duyên hải Bắc Trung Bộ của Việt Nam, được thiên nhiên ban tặng nhiều nguồn tài nguyên thiên nhiên phong phú, nền văn hóa phong phú và nhiều di tích lâu đời. Tỉnh được mệnh danh là “Vương quốc của những hang động lớn nhất thế giới”, với hơn 400 hang động mang trong mình những bí ẩn, kỳ thú thu hút nhân loại khám phá.
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/PhongNha/index.htm" target="_blank">View Quảng Bình</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- --------------------------------HOI AN---------------------------------- -->
+                    <div id="hoian">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/Hoi an.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Hội An</strong> - Vùng Đất Của Những Khát Khao Tái Ngộ</p>
+                                <p>
+                                    Từng là một thương cảng sầm uất, Hội An ngày nay là một thỏi nam châm văn hóa mộc mạc và quyến rũ đối với bất kỳ du khách nào. Thành phố dường như bị thời gian lãng quên, còn giữ được nhiều di sản truyền thống từ những ngày vàng son: nơi đây rõ nét là nơi giao thoa của văn hóa Đông Tây, là sự kết tinh của Việt, Hoa, Nhật và các nước châu Âu thể hiện trong ẩm thực, kiến ​​trúc, và truyền thống địa phương.
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/HoiAn/index.htm" target="_blank">View Hội An</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- --------------------------------HA LONG---------------------------------- -->
+                    <div id="halong">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/Ha long.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Vịnh Hạ Long</strong> - Vùng Đất Rồng Bay</p>
+                                <p>
+                                    Được UNESCO công nhận hai lần là Di sản Thế giới, Vịnh Hạ Long là một trong những điểm đến hàng đầu tại Việt Nam đối với khách du lịch trong và ngoài nước với sự pha trộn tuyệt vời giữa vẻ đẹp tự nhiên hoang sơ và sự rung cảm của thành phố sôi động.
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/HaLong/index.htm" target="_blank">View Hạ Long</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- --------------------------------SA PA---------------------------------- -->
+                    <div id="sapa">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/Sa pa.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Sa Pa</strong> - Phố Núi Trong Sương</p>
+                                <p>
+                                    Được mệnh danh là “thị trấn trên mây”, Sapa là một kho báu quyến rũ của vùng Tây Bắc Việt Nam. Chỉ thoáng nhìn qua, nơi đây dễ dàng hớp hồn du khách bởi vẻ đẹp của những thửa ruộng bậc thang xếp tầng biểu tượng, những thung lũng xanh mướt và những ngọn núi màu ngọc bích nằm cạnh nhau. Được thiên nhiên ban tặng, không có gì lạ khi Sapa trở thành một trong những điểm đến quyến rũ nhất cả nước.
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/DaNang/index.htm" target="_blank">View SaPa</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- --------------------------------PHU QUOC---------------------------------- -->
+                    <div id="phuquoc">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/phu quoc.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Phú Quốc</strong> - Đảo Ngọc</p>
+                                <p>
+                                    Phú Quốc được nhiều người biết đến với tên gọi “Đảo Ngọc” và cũng là hòn đảo lớn nhất của Việt Nam. Với nước biển trong xanh màu ngọc bích, bãi biển cát trắng mịn, thời tiết dễ chịu quanh năm cùng hệ thống khách sạn, resort lớn phục vụ du khách, Phú Quốc thực sự là thiên đường biển, trở thành một trong những lựa chọn hàng đầu của hầu hết những người yêu biển.
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/DaNang/index.htm" target="_blank">View Phú Quốc</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <!-- --------------------------------DA NANG---------------------------------- -->
+                    <div id="danang">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/da nang.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Đà Nẳng</strong> - Thành Phố Đáng Sống</p>
+                                <p>
+                                    Được bao quanh bởi Ngũ Hành Sơn hùng vĩ và Biển Đông trong xanh, Đà Nẵng mang đến hương vị thiên đường trên bờ biển lấp lánh của miền Trung Việt Nam. Không chỉ được mệnh danh là nơi đáng sống nhất Việt Nam, thành phố biển này còn lọt top điểm đến thịnh hành nhất thế giới năm 2020 do TripAdvisor bình chọn. Sở hữu một số bãi biển đẹp nhất thế giới, Đà Nẵng là nơi sự quyến rũ của thiên nhiên và những giá trị hiện đại hòa quyện một cách hoàn hảo.
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/DaNang/index.htm" target="_blank">View Đà Nẳng</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- --------------------------------DA LAT---------------------------------- -->
+                    <div id="dalat">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/da lat.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Đà Lạt</strong> - Thành Phố Ngàn Hoa</p>
+                                <p>
+                                    Đà Lạt trông giống như sự giao thoa giữa Việt Nam và dãy núi Alps của Pháp. Nhiều khách sạn và nhà ở của nó được xây dựng theo phong cách Pháp trong thời kỳ thuộc địa của Pháp. Có rất nhiều địa điểm dành cho du khách yêu thích kiến ​​trúc có thể tham quan như nhà ga Đà Lạt do hai kiến ​​trúc sư người Pháp là Moncet và Reveron thiết kế, hay nhà nghỉ Hằng Nga hay còn gọi là “Ngôi nhà điên” cũng là một địa điểm lưu trú thú vị.
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/NhaTrang2021/index.htm" target="_blank">View Đà Lạt</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- --------------------------------NHA TRANG---------------------------------- -->
+                    <div id="nhatrang">
+                        <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/travel/Nha trang.jpg" class="img" alt="blog1">
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p><strong>Nha Trang</strong> - Hòn Ngọc Của Biển Đông</p>
+                                <p>
+                                    Với những ai đã quen thuộc, Nha Trang gợi nhớ ngay đến hình ảnh một bờ biển trải dài tuyệt đẹp với bãi cát trắng mịn hình lưỡi liềm, một vịnh biển tuyệt đẹp với những hòn đảo lớn nhỏ và hệ thống đồi núi rộng lớn bao quanh.
+                                </p>
+                                <button class="btn post-btn">
+                                    <a style="font-size: 15px;" href="https://vietnam.travel/sites/default/files/360Tour/NhaTrang2021/index.htm" target="_blank">View Nha Trang</a> &nbsp;
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <aside class="sidebar">
+                    <div class="popular-post" id="festival">
+                        <h2>Một số ngày lễ lớn</h2>
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="200">
+                            <div class="post-image">
+                                <div>
+                                    <img src="/Asset/Popular-post/Tet.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;01/01 (Lịch Âm)</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p>Tết Âm Lịch</p>
+                            </div>
+                        </div>
+
+                        <!-- --------------------------------GIAI PHONG DAT NUOC---------------------------------- -->
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/Popular-post/giai phong mien nam.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>30/04</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p>Ngày Giải phóng miền Nam thống nhất đất nước</p>
+                            </div>
+                        </div>
+
+                        <!-- --------------------------------QUOC KHANH---------------------------------- -->
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="500">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/Popular-post/quockhanh.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;02/09</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p>
+                                    Ngày Quốc khánh Việt Nam
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/Popular-post/Quoc te phu nu.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>20/10</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p>
+                                    Ngày Phụ nữ Việt Nam
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- --------------------------------GIO TO HUNG VUONG---------------------------------- -->
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="300">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/Popular-post/gioto.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;10/03 (Lịch Âm)</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p>
+                                    Ngày Giỗ Tổ Hùng Vương
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- --------------------------------TRUNG THU---------------------------------- -->
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="400">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/Popular-post/Trung Thu.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;15/08(Lịch Âm)</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p>
+                                    Tết Trung thu
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <!-- --------------------------------HOI AN FESTIVAL---------------------------------- -->
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/Popular-post/hoi an festival.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>30/10</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p>
+                                    Hội An Festival
+                                </p>
+                            </div>
+                        </div>
+                        <!-- --------------------------------HUE FESTIVAL---------------------------------- -->
+                        <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+                            <div class="post-image">
+                                <div>
+                                    <img src="./Asset/Popular-post/hue festival.jpg" class="img" alt="blog1">
+                                </div>
+                                <div class="post-info flex-row">
+                                    <span><i class="fas fa-calendar-alt text-gray"></i>30/04</span>
+                                </div>
+                            </div>
+                            <div class="post-title">
+                                <p>
+                                    Huế Festival
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- -------------------------------CONTACT--------------------------------------------- -->
+                    <div class="newsletter" data-aos="fade-up" data-aos-delay="300" id="contact">
+                        <h2>Liên Hệ</h2>
+                        <div class="container-c">
+                            <div class="social text-gray">
+                                <a href="https://www.facebook.com/haianhbooking168" target="_blank" ><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://zalo.me/0898640999" target="_blank"><img src="./Asset/7044033_zalo_icon.svg" style="height: 24px;" alt=""></i></a>
+                            </div>
+                            <p><strong>Phone : 0898640999</strong></p>
+                            <p><strong>Mail : </strong><a class="contact-mail" style="color: var(--text-light);" href="mailto:haianhbooking@gmail.com">haianhbooking@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="post-content" data-aos="flip-up" data-aos-delay="600">
+                        <h2>Đặt vé du lịch giá rẻ</h2>
+                        <div class="post-image">
+                            <div>
+                                <img src="./mb32.png" class="img" alt="blog1">
+                            </div>
+                        </div>
+                        <div class="post-title">
+                            <button class="btn post-btn travel-btn" style="width: 100%; margin-left: 0; margin-top: 1rem; border-radius: 10px"> <a style="font-size: 15px;"
+                                    href="https://haianhbooking.com/" target="_blank"> <i class="ti-hand-point-right" style="margin-right: 10px;"></i>Hải Anh Booking</a> &nbsp; </button>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+        </section>
+    </main>
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 500) {
+                document.getElementById("modal-contact").style.display = "block";
+            } else {
+                document.getElementById("modal-contact").style.display = "none";
+            }
+        };
+    </script>
+    <div class="modal-contact" id="modal-contact">
+        <div class="container-c">
+            <div class="social text-gray">
+                <a href="https://www.facebook.com/haianhbooking168" target="_blank" ><i class="fab fa-facebook-f"></i></a>
+                <a href="https://zalo.me/0898640999" target="_blank"><img src="./Asset/7044033_zalo_icon.svg" style="height: 24px;" alt=""></i></a>
+            </div>
+            <p><strong>Phone : 0898640999</strong></p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="about-us" data-aos="fade-right" data-aos-delay="200">
+                <h2>Hải Anh Booking</h2>
+                <p>
+                    HaiAnh Booking hỗ trợ đặt vé máy bay, phòng khách sạn, tour du lịch và dịch vụ tư vấn nhanh chóng.
+                </p>
+            </div>
+            <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+                <h2>Liên Hệ</h2>
+                <div class="container-c">
+                    <div class="social text-gray">
+                        <a href="https://www.facebook.com/haianhbooking168" target="_blank" ><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://zalo.me/0898640999" target="_blank"><img src="./Asset/7044033_zalo_icon.svg" style="height: 24px;" alt=""></i></a>
+                    </div>
+                    <p><strong>Phone : 0898640999</strong></p>
+                    <p><strong>Mail : </strong><a class="contact-mail" style="color: var(--text-light);" href="mailto:haianhbooking@gmail.com">haianhbooking@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="instagram" data-aos="fade-left" data-aos-delay="200">
+                <h2>Instagram</h2>
+                <div class="flex-row">
+                    <img src="./Asset/Instagram/Ha long.jpg" alt="insta1">
+                    <img src="./Asset/Instagram/Ha Noi.jpg" alt="insta2">
+                    <img src="./Asset/Instagram/HCM.jpg" alt="insta3">
+                </div>
+                <div class="flex-row">
+                    <img src="./Asset/Instagram/Hoi an.jpg" alt="insta4">
+                    <img src="./Asset/Instagram/Hue.jpg" alt="insta5">
+                    <img src="./Asset/Instagram/Nha trang.jpg" alt="insta6">
+                </div>
+            </div>
+        </div>
+        <div class="rights flex-row">
+            <h4 class="text-gray">
+                Hải Anh Booking
+            </h4>
+        </div>
+    </footer>
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="./Js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="./Js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="./Js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="./Js/main.js"></script>
+</body>
+
+</html>
